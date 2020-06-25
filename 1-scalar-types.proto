@@ -1,0 +1,20 @@
+/* Example of a simple proto buff called Person with defined attributes */
+
+syntax = "proto3";
+
+message Person{
+    int32 age                = 1;   //tag is 1
+    string first_name        = 2;   
+    string last_name         = 3;
+    bytes small_picture      = 4;
+    bool is_profile_verified = 5;
+    float height             = 6;   //tag is 6
+
+}
+//Smallest tag allowed is 1
+
+//Tags not allowed in range 19000 to 19999 - reseved by Google
+
+//Tags from 1 - 15 use 1 byte space when encoded - used for frequently populated fields
+
+//Tags from 16 - 2047 use 2 bytes space

@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+//The below import will resolve the "date" and "Address" fields in Person message.
+import "4-more-messages.proto";
+
+message Person{
+    int32 age                = 1;   
+    string first_name        = 2;   
+    string last_name         = 3;
+    bytes small_picture      = 4;
+    bool is_profile_verified = 5;
+    float height             = 6;   
+
+    repeated string phone_numbers = 7;  
+
+    //This defines an enum called homeTown and it will take default value of 0 (first element)
+    enum homeTown{
+        HOMETOWN_UNKNOWN = 0;
+        HOMETOWN_DELHI   = 1;
+        HOMETOWN_MUMBAI  = 2;
+        HOMETOWN_CHENNAI = 3;
+        HOMETOWN_KOLKATA = 4;
+    }
+
+    homeTown home_town = 8;     //This is tag number 8
+    date birthday      = 9;     //date is not defined in this proto file so we need an import 
+    repeated Address addresses = 10;  //Address is required to be imported
+
+}

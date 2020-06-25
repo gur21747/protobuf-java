@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+
+/*
+Year (number)
+Month (number)
+Day (number)
+ 2020/06/25
+
+ https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
+*/
+
+message date{
+    int32 year  = 1;
+    int32 month = 2;
+    int32 day   = 3;
+}
+
+/*
+ (GPS coordinates: -33.865382, 151.192861). 
+Latitude (number)
+Longitude (number)
+
+https://github.com/googleapis/googleapis/blob/master/google/type/latlng.proto
+
+*/
+
+message gpsLocation{
+    double Latitude  = 1;
+    double Longitude = 2;
+}
+
+/*
+Amount : USD 1000.50  (1000 = integral, 50 = decimal)):
+Currency Code (string)
+Integral amount (number)
+Decimal amount (number)
+
+https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
+
+*/
+
+message amount{
+    string currency_code   = 1;     //e.g. USD, INR, GBP
+    int64 amount_int       = 2;
+    int32 amount_nanos     = 3;     //nanos are reffered on google documentation
+}
+
+/* Day of the week enum 
+
+https://github.com/googleapis/googleapis/blob/master/google/type/dayofweek.proto
+*/
+enum dayOfWeek{
+    DAY_UNKNOWN     = 0;
+    DAY_MONDAY      = 1;
+    DAY_TUESDAY     = 2;
+    DAY_WEDNESDAY   = 3;
+    DAY_THURDAY     = 4;
+    DAY_FRIDAY      = 5;
+    DAY_SATURDAY    = 6;
+    DAY_SUNDAY      = 7;
+}
+
+//Address type to be used in Person message in file 7-imports
+message Address {
+    string address_line_1 = 1;
+    string address_line_2 = 2;
+    string zip_code = 3;
+    string city = 4;
+    string country = 5;
+}
