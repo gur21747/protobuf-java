@@ -1,4 +1,9 @@
 package com.learning;
+/*
+  Created by  : Ribhu Kashyap
+  Created on  : 25/06/2020
+  Purpose     : Demo of consuming the proto buffer services
+ */
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.util.JsonFormat;
 import example.simple.Simple;
