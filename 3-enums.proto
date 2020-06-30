@@ -15,13 +15,15 @@ message Person{
 
     repeated string phone_numbers = 7;  
 
-    //This defines an enum called homeTown and it will take default value of 0 (first element)
+    //This defines an enum called homeTown 
+    //The default value is the first defined enum value, which must be 0 (first element)
     enum homeTown{
         HOMETOWN_UNKNOWN = 0;
         HOMETOWN_DELHI   = 1;
         HOMETOWN_MUMBAI  = 2;
         HOMETOWN_CHENNAI = 3;
         HOMETOWN_KOLKATA = 4;
+        reserved 5 to max;      //Mark fields reserved so as to not allow duplication/re-use issues
     }
 
     homeTown home_town = 8;     //This is tag number 8
